@@ -1,0 +1,17 @@
+{
+  "cowsay": {
+    "miniDapp": "cowsay1.0.0.minidapp",
+    "icon": "cowsay/images/cowsayIcon.png",
+    "conf": "cowsay/minidapp.conf"
+  },
+  "provenator": {
+    "miniDapp": "provenator0.1.0.minidapp",
+    "icon": "provenator/images/provenatorIcon.png",
+    "conf": "provenator/minidapp.conf"
+  },
+  "storefront": {
+    "miniDapp": "storefront0.2.0.minidapp",
+    "icon": "storefront/images/storeIcon.png",
+    "conf": "storefront/minidapp.conf"
+  }
+}

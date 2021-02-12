@@ -6,12 +6,12 @@
   },
   "provenator": {
     "miniDapp": "provenator0.1.0.minidapp",
-    "icon": "provenator/images/provenatorIcon.png",
-    "conf": "provenator/minidapp.conf"
+    "icon": "build/images/provenatorIcon.png",
+    "conf": "build/minidapp.conf"
   },
   "storefront": {
-    "miniDapp": "storefront0.2.0.minidapp",
-    "icon": "storefront/images/storeIcon.png",
-    "conf": "storefront/minidapp.conf"
+    "miniDapp": "storefront1.0.2.minidapp",
+    "icon": "images/storeIcon.png",
+    "conf": "minidapp.conf"
   }
 }

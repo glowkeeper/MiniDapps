@@ -10,7 +10,7 @@
     "conf": "build/minidapp.conf"
   },
   "storefront": {
-    "miniDapp": "storefront1.0.2.minidapp",
+    "miniDapp": "storefront1.0.3.minidapp",
     "icon": "images/storeIcon.png",
     "conf": "minidapp.conf"
   }

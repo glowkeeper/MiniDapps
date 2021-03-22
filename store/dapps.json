@@ -1,6 +1,6 @@
 {
   "cowsay": {
-    "miniDapp": "cowsay1.0.0.minidapp",
+    "miniDapp": "cowsay1.0.1.minidapp",
     "icon": "cowsay/images/cowsayIcon.png",
     "conf": "cowsay/minidapp.conf"
   },

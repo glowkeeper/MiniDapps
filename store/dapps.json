@@ -5,7 +5,7 @@
     "conf": "cowsay/minidapp.conf"
   },
   "provenator": {
-    "miniDapp": "provenator0.1.0.minidapp",
+    "miniDapp": "provenator0.1.1.minidapp",
     "icon": "build/images/provenatorIcon.png",
     "conf": "build/minidapp.conf"
   },

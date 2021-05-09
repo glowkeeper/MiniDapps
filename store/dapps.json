@@ -13,5 +13,10 @@
     "miniDapp": "storefront1.0.3.minidapp",
     "icon": "images/storeIcon.png",
     "conf": "minidapp.conf"
+  },
+  "powerConsole": {
+    "miniDapp": "powerConsole1.0.0.minidapp",
+    "icon": "images/console.svg",
+    "conf": "minidapp.conf"
   }
 }

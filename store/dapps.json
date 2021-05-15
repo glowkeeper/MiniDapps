@@ -9,11 +9,6 @@
     "icon": "build/images/provenatorIcon.png",
     "conf": "build/minidapp.conf"
   },
-  "storefront": {
-    "miniDapp": "storefront1.0.3.minidapp",
-    "icon": "images/storeIcon.png",
-    "conf": "minidapp.conf"
-  },
   "powerConsole": {
     "miniDapp": "powerConsole1.1.1.minidapp",
     "icon": "images/console.svg",

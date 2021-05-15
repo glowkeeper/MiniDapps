@@ -15,7 +15,7 @@
     "conf": "minidapp.conf"
   },
   "powerConsole": {
-    "miniDapp": "powerConsole1.1.0.minidapp",
+    "miniDapp": "powerConsole1.1.1.minidapp",
     "icon": "images/console.svg",
     "conf": "minidapp.conf"
   },

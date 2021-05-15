@@ -17379,31 +17379,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
-var sleep = function sleep(ms) {
-  return new Promise(function (resolve) {
-    return setTimeout(resolve, ms);
-  });
-};
-
-var doPost = function doPost(url, cmd) {
-  return new Promise(function (resolve, reject) {
-    minima__WEBPACK_IMPORTED_MODULE_0__.Minima.net.POST(_config__WEBPACK_IMPORTED_MODULE_2__.Remote.cmdURL, cmd, function (msg) {
-      if (msg.hasOwnProperty('result')) {
-        var cmdObject = JSON.parse(msg.result);
-
-        if (cmdObject.status) {
-          resolve(cmdObject.response);
-        } else {
-          resolve({});
-        }
-      } else {
-        resolve({});
-      }
-    });
-  });
-};
-
 var init = function init() {
   return /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dispatch) {
@@ -17512,6 +17487,22 @@ var clear = function clear() {
     };
   }();
 };
+
+var sleep = function sleep(ms) {
+  return new Promise(function (resolve) {
+    return setTimeout(resolve, ms);
+  });
+};
+
+var commandAsync = function commandAsync(cmd) {
+  return new Promise(function (resolve, reject) {
+    // console.log('Got command', cmd);
+    minima__WEBPACK_IMPORTED_MODULE_0__.Minima.cmd(cmd, function (msg) {
+      resolve(msg.response);
+    });
+  });
+};
+
 var command = function command(cmd) {
   return /*#__PURE__*/function () {
     var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(dispatch) {
@@ -17519,31 +17510,21 @@ var command = function command(cmd) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
+              // console.log('Got command', cmd);
               dispatch((0,_actions__WEBPACK_IMPORTED_MODULE_3__.write)({
                 data: [{
                   stop: false
                 }]
               })(_types__WEBPACK_IMPORTED_MODULE_1__.CmdActionTypes.CMD_STOP));
-              minima__WEBPACK_IMPORTED_MODULE_0__.Minima.net.POST(_config__WEBPACK_IMPORTED_MODULE_2__.Remote.cmdURL, cmd, function (msg) {
+              minima__WEBPACK_IMPORTED_MODULE_0__.Minima.cmd(cmd, function (msg) {
                 dispatch((0,_actions__WEBPACK_IMPORTED_MODULE_3__.write)({
                   data: [{
                     stop: true
                   }]
                 })(_types__WEBPACK_IMPORTED_MODULE_1__.CmdActionTypes.CMD_STOP));
-
-                if (msg.hasOwnProperty('result')) {
-                  var cmdObject = JSON.parse(msg.result);
-
-                  if (cmdObject.status) {
-                    dispatch((0,_actions__WEBPACK_IMPORTED_MODULE_3__.write)({
-                      data: cmdObject.response
-                    })(_types__WEBPACK_IMPORTED_MODULE_1__.CmdActionTypes.CMD_SUCCESS));
-                  } else {
-                    dispatch((0,_actions__WEBPACK_IMPORTED_MODULE_3__.write)({
-                      data: []
-                    })(_types__WEBPACK_IMPORTED_MODULE_1__.CmdActionTypes.CMD_FAILURE));
-                  }
-                }
+                dispatch((0,_actions__WEBPACK_IMPORTED_MODULE_3__.write)({
+                  data: msg.response
+                })(_types__WEBPACK_IMPORTED_MODULE_1__.CmdActionTypes.CMD_SUCCESS));
               });
 
             case 2:
@@ -17589,7 +17570,7 @@ var commandIterate = function commandIterate(cmd) {
               }
 
               _context5.next = 7;
-              return doPost(_config__WEBPACK_IMPORTED_MODULE_2__.Remote.cmdURL, cmd.cmd);
+              return commandAsync(cmd.cmd);
 
             case 7:
               thisPost = _context5.sent;
@@ -17619,7 +17600,7 @@ var commandIterate = function commandIterate(cmd) {
               }
 
               _context5.next = 21;
-              return doPost(_config__WEBPACK_IMPORTED_MODULE_2__.Remote.cmdURL, cmd.cmd);
+              return commandAsync(cmd.cmd);
 
             case 21:
               _thisPost = _context5.sent;
